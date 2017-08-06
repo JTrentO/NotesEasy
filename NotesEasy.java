@@ -69,8 +69,24 @@ public class NotesEasy extends Application {
 		textStyle.getItems().addAll( underline, bold, italic );
 		
 		Menu textSize = new Menu( "Text Size" );
+		ToggleGroup toggleSize = new ToggleGroup();
+		RadioMenuItem eighteen = new RadioMenuItem( "18px" );
+		RadioMenuItem twentyFour = new RadioMenuItem( "24px" );
+		RadioMenuItem thirty = new RadioMenuItem( "30px" );
+		textSize.getItems().addAll( eighteen, twentyFour, thirty );
+		eighteen.setToggleGroup( toggleSize );
+		twentyFour.setToggleGroup( toggleSize );
+		thirty.setToggleGroup( toggleSize );
 		
 		Menu font = new Menu( "Font" );
+		ToggleGroup toggleFont = new ToggleGroup();
+		RadioMenuItem helvetica = new RadioMenuItem( "Helvetica" );
+		RadioMenuItem timesRoman = new RadioMenuItem( "Times New Roman" );
+		RadioMenuItem courier = new RadioMenuItem( "Courier" );
+		helvetica.setToggleGroup( toggleFont );
+		timesRoman.setToggleGroup( toggleFont );
+		courier.setToggleGroup( toggleFont );
+		font.getItems().addAll( helvetica, timesRoman, courier );
 		
         menuFormat.getItems().addAll( font, textStyle, textSize );
 		
